@@ -78,6 +78,12 @@ namespace ProductApps
             Wrapping = wrapping;
         }
 
+        //Setting GST value
+        public void setGST(decimal gst)
+        {
+            GST = gst;
+        }
+
         //Calculator total including delivery
         public decimal TotalDelivery() {            
             return TotalPayment + Delivery;
@@ -87,6 +93,12 @@ namespace ProductApps
         public decimal TotalWrapping()
         {
             return TotalDelivery() + Wrapping;
+        }
+
+        //Calculator total including GST
+        public decimal TotalGST()
+        {
+            return TotalWrapping() * (GST+1);
         }
     }
 }
