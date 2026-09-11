@@ -65,5 +65,16 @@ namespace ProductApps
         {
             TotalPayment = Price * Quantity;
         }
+
+        //Setting delivary value
+        public void setDelivery(decimal delivery)
+        {
+            Delivery = delivery;
+        }
+
+        //Calculator total including delivery
+        public decimal TotalDelivery() {            
+            return TotalPayment + Delivery;
+        }
     }
 }
