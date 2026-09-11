@@ -72,9 +72,21 @@ namespace ProductApps
             Delivery = delivery;
         }
 
+        //Setting wrapping value
+        public void setWrapping(decimal wrapping)
+        {
+            Wrapping = wrapping;
+        }
+
         //Calculator total including delivery
         public decimal TotalDelivery() {            
             return TotalPayment + Delivery;
+        }
+
+        //Calculator total including wrapping
+        public decimal TotalWrapping()
+        {
+            return TotalDelivery() + Wrapping;
         }
     }
 }
